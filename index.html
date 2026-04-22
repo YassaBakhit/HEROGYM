@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERO GYM</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── Progress bar ──────────────────────── -->
+<div id="progressBar"></div>
+
+<!-- ── Back to top ───────────────────────── -->
+<button id="backTop" aria-label="الرجوع للأعلى">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ════════════════════════════════════════
+     HEADER
+════════════════════════════════════════ -->
+<header class="header">
+  <div class="logo">
+    <i class="fa-solid fa-bolt"></i>
+    HERO GYM
+  </div>
+  <nav class="nav">
+    <button class="toggle" id="toggle" aria-label="القائمة">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <ul id="navigation">
+      <li><a href="#about">عن النادي</a></li>
+      <li><a href="#trainers">المدربين</a></li>
+      <li><a href="#tips">نصايح</a></li>
+      <li><a href="systems.html">الأنظمة التدريبية ↗</a></li>
+      <li><a href="#pricing">الأسعار</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-gym-name">
+      <i class="fa-solid fa-bolt"></i>
+      HERO GYM
+      <i class="fa-solid fa-bolt"></i>
+    </div>
+    <div class="hero-badge">🏋️ النادي الأول في المنطقة</div>
+    <h1 class="hero-title">
+      غيّر<br><span>جسمك</span><br>تتغير حياتك
+    </h1>
+    <p class="hero-subtitle">أحدث المعدات · أفضل المدربين · نتائج حقيقية</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">اشترك دلوقتي</button>
+      <button class="btn-outline"  onclick="window.location.href='systems.html'">شوف الأنظمة التدريبية</button>
+    </div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num" data-target="200">0</div><div class="stat-label">عضو نشط</div></div>
+    <div class="stat"><div class="stat-num" data-target="12">0</div><div class="stat-label">مدرب محترف</div></div>
+    <div class="stat"><div class="stat-num" data-target="5">0</div><div class="stat-label">سنوات خبرة</div></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TRAINING SYSTEMS
+════════════════════════════════════════ -->
+<section class="systems" id="systems">
+
+  <div class="systems-fire-top"></div>
+
+  <div class="container">
+
+    <div class="systems-mega-header reveal">
+      <div class="systems-eyebrow">
+        <span class="eyebrow-line"></span>
+        <i class="fa-solid fa-fire"></i>
+        <span>HERO GYM — الأنظمة التدريبية</span>
+        <i class="fa-solid fa-fire"></i>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h2 class="systems-mega-title">اختار <span>سلاحك</span></h2>
+      <p class="systems-mega-sub">٣ أنظمة تدريبية متكاملة — كل تفصيلة موجودة عشان تمشي عليها من أول يوم</p>
+
+      <div class="system-picker">
+        <div class="picker-card active" data-tab="ppl">
+          <div class="picker-icon">💪</div>
+          <div class="picker-name">Push Pull Legs</div>
+          <div class="picker-level">مبتدئ → متقدم</div>
+          <div class="picker-glow"></div>
+        </div>
+        <div class="picker-card" data-tab="arnold">
+          <div class="picker-icon">🦁</div>
+          <div class="picker-name">Arnold Split</div>
+          <div class="picker-level">متوسط → متقدم</div>
+          <div class="picker-glow"></div>
+        </div>
+        <div class="picker-card" data-tab="pro">
+          <div class="picker-icon">⚡</div>
+          <div class="picker-name">Pro Split</div>
+          <div class="picker-level">المحترفين فقط</div>
+          <div class="picker-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="systems-tabs" style="display:none">
+      <button class="tab-btn active" data-tab="ppl">Push Pull Legs</button>
+      <button class="tab-btn"        data-tab="arnold">Arnold Split</button>
+      <button class="tab-btn"        data-tab="pro">Pro Split</button>
+    </div>
+
+    <!-- ══ TAB 1: Push Pull Legs ══ -->
+    <div class="tab-panel active" id="ppl">
+      <div class="system-meta">
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-calendar-week"></i></div><div class="meta-label">أيام التمرين</div><div class="meta-value">6 أيام / أسبوع</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-repeat"></i></div><div class="meta-label">تكرار العضلة</div><div class="meta-value">مرتين أسبوعياً</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-signal"></i></div><div class="meta-label">المستوى</div><div class="meta-value">مبتدئ → متقدم</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-bullseye"></i></div><div class="meta-label">الهدف</div><div class="meta-value">ضخامة + قوة</div></div>
+      </div>
+        <!-- زرار الرجوع للأيام كلها -->
+        <div class="days-back-bar" style="display:none;">
+          <button class="days-back-btn" onclick="resetDayCards(this)">
+            <i class="fa-solid fa-arrow-right"></i>
+            رجوع للأيام كلها
+          </button>
+          <span class="days-back-label"></span>
+        </div>
+      <div class="days-grid">
+
+        <!-- السبت: Push -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">السبت</span>
+            <span class="day-muscle">Push — صدر / كتف / ترايسبس</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bench Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش مستوي بالبار</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Incline Dumbbell Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش عالي بالدامبل </div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell-Shoulder-Press2.gif" alt=""><div class="ex-info"><div class="ex-name">كتف امامي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell-Lateral-Raise2.gif" alt=""><div class="ex-info"><div class="ex-name">رفرفة جانبي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Tricep Pushdown.webp" alt=""><div class="ex-info"><div class="ex-name">دفع بالمسطرة للتراي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Overhead Tricep Extension.png" alt=""><div class="ex-info"><div class="ex-name">بار فرنساوي للتراي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الأحد: Pull -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الأحد</span>
+            <span class="day-muscle">Pull — ظهر / بايسبس</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lat Pulldown.webp" alt=""><div class="ex-info"><div class="ex-name">سحب واسع او عقلة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bent-Over Row.webp" alt=""><div class="ex-info"><div class="ex-name">سحب ارضي واسع - جهاز حرف لT</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/cablerow.jpg" alt=""><div class="ex-info"><div class="ex-name">سحب ارضي ضيق</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Barbell Curl.png" alt=""><div class="ex-info"><div class="ex-name">باي بالبار الزجزاج</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/HammerCurl.jpg" alt=""><div class="ex-info"><div class="ex-name">شاكوش بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Deadlift.jpg" alt=""><div class="ex-info"><div class="ex-name">سحب واسع او عقلة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الاثنين: Legs -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الاثنين</span>
+            <span class="day-muscle">Legs — أرجل</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/squat.webp" alt=""><div class="ex-info"><div class="ex-name">سكوات</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Romanian Deadlift.jpg" alt=""><div class="ex-info"><div class="ex-name">ديدليفت روماتي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Press.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الدفع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">الجهاز للرجل الخلفي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Extension.jpg" alt=""><div class="ex-info"><div class="ex-name">جهاز للرجل الامامي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Calf Raise.webp" alt=""><div class="ex-info"><div class="ex-name">سمانة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الثلاثاء: Push مرة تانية -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الثلاثاء</span>
+            <span class="day-muscle">Push — صدر / كتف / ترايسبس</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Incline Barbell Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش عالي بالبار</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Butterfly device.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الفراشة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell-Shoulder-Press2.gif" alt=""><div class="ex-info"><div class="ex-name">كتف امامي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Front Raise.webp" alt=""><div class="ex-info"><div class="ex-name">رفرفة امامي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Overhead Tricep Extension.png" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس فرنساوي بالبار</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Cable Chest Fly.jpg" alt=""><div class="ex-info"><div class="ex-name">تفتيح بالكابلات</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الأربعاء: Pull مرة تانية -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الأربعاء</span>
+            <span class="day-muscle">Pull — ظهر / بايسبس</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><div class="ex-info"><div class="ex-name">Rack Pull — راك بول</div><div class="ex-sets">4 مجاميع × 6-8 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Wide-Grip Pulldown.webp" alt=""><div class="ex-info"><div class="ex-name">سحب عالي واسع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/One-Arm Dumbbell Row.webp" alt=""><div class="ex-info"><div class="ex-name">منشار بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Face Pull.webp" alt=""><div class="ex-info"><div class="ex-name">كتف خلفي بالحبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Concentration Curl.webp" alt=""><div class="ex-info"><div class="ex-name"> ارتكاز بالدامبل ع الدكة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Cable Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">باي بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الخميس: Legs مرة تانية -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الخميس</span>
+            <span class="day-muscle">Legs — أرجل</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Front Squat.webp" alt=""><div class="ex-info"><div class="ex-name">سكوات امامي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bulgarian Split Squat.webp" alt=""><div class="ex-info"><div class="ex-name"> سكوات بلغاري للخلفيات </div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Press.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الدفع للرجل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Deadlift.jpg" alt=""><div class="ex-info"><div class="ex-name"> ديدليفت</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">خلفيات ع الجهاز </div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Calf Raise.webp" alt=""><div class="ex-info"><div class="ex-name">سمانة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الجمعة: راحة -->
+        <div class="day-card rest-day">
+          <div class="day-header">
+            <span class="day-name">الجمعة</span>
+            <span class="day-muscle rest">راحة 💤</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><div class="ex-info"><div class="ex-name">يوم راحة كامل</div><div class="ex-sets">نوم كافي — بروتين كافي — مياه كافية</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><div class="ex-info"><div class="ex-name">Stretching خفيف اختياري</div><div class="ex-sets">15-20 دقيقة تمدد خفيف</div></div></div>
+          </div>
+        </div>
+
+      </div><!-- /days-grid PPL -->
+    </div><!-- /tab-panel PPL -->
+
+    <!-- ══ TAB 2: Arnold Split ══ -->
+    <div class="tab-panel" id="arnold">
+      <div class="system-meta">
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-calendar-week"></i></div><div class="meta-label">أيام التمرين</div><div class="meta-value">6 أيام / أسبوع</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-repeat"></i></div><div class="meta-label">تكرار العضلة</div><div class="meta-value">مرتين أسبوعياً</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-signal"></i></div><div class="meta-label">المستوى</div><div class="meta-value">متوسط → متقدم</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-bullseye"></i></div><div class="meta-label">الهدف</div><div class="meta-value">ضخامة كاملة</div></div>
+      </div>
+        <!-- زرار الرجوع للأيام كلها -->
+        <div class="days-back-bar" style="display:none;">
+          <button class="days-back-btn" onclick="resetDayCards(this)">
+            <i class="fa-solid fa-arrow-right"></i>
+            رجوع للأيام كلها
+          </button>
+          <span class="days-back-label"></span>
+        </div>
+      <div class="days-grid">
+
+        <!-- السبت: صدر + ظهر -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">السبت</span>
+            <span class="day-muscle">صدر + ظهر</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bench Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش مستوي بالبار</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Incline Dumbbell Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش عالي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Butterfly device.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الفراشة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lat Pulldown.webp" alt=""><div class="ex-info"><div class="ex-name">سحب علوي للضهر</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bent-Over Row.webp" alt=""><div class="ex-info"><div class="ex-name">سحب ارضي واسع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/One-Arm Dumbbell Row.webp" alt=""><div class="ex-info"><div class="ex-name">منشار بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/oneHandpullove.webp" alt=""><div class="ex-info"><div class="ex-name">سحب عالي فردي للضهر</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الأحد: كتف + أذرع -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الأحد</span>
+            <span class="day-muscle">كتف + أذرع</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell-Shoulder-Press2.gif" alt=""><div class="ex-info"><div class="ex-name">كتف امامي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lateral Raises.webp" alt=""><div class="ex-info"><div class="ex-name">رفرفة جانبي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Rear shoulder on the machine.webp" alt=""><div class="ex-info"><div class="ex-name">كتف خلفي بالجهاز</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Cable Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">باي بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell curl mael.webp" alt=""><div class="ex-info"><div class="ex-name">باي ع الدكة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Overhead Tricep Extension.png" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس فرنساوي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Tricep Pushdown.webp" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الاثنين: أرجل -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الاثنين</span>
+            <span class="day-muscle">أرجل كاملة</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/squat.webp" alt=""><div class="ex-info"><div class="ex-name">سكوات</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Romanian Deadlift.jpg" alt=""><div class="ex-info"><div class="ex-name">ديدليفت روماتي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Press.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الدفع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">الجهاز للرجل الخلفي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Extension.jpg" alt=""><div class="ex-info"><div class="ex-name">جهاز للرجل الامامي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Calf Raise.webp" alt=""><div class="ex-info"><div class="ex-name">سمانة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الثلاثاء: صدر + ظهر (تكرار) -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الثلاثاء</span>
+            <span class="day-muscle">صدر + ظهر</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bench Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش مستوي بالبار</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Incline Dumbbell Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش عالي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell Flyes.png" alt=""><div class="ex-info"><div class="ex-name">تفتيح بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lat Pulldown.webp" alt=""><div class="ex-info"><div class="ex-name">سحب علوي للضهر</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/cablerow.jpg" alt=""><div class="ex-info"><div class="ex-name">سحب ارضي ضيق</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/oneHandpullove.webp" alt=""><div class="ex-info"><div class="ex-name">سحب عالي ع الكيبل قاعد</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/oneHandpullove.webp" alt=""><div class="ex-info"><div class="ex-name">سحب عالي فردي للضهر</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الأربعاء: كتف + أذرع (تكرار) -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الأربعاء</span>
+            <span class="day-muscle">كتف + أذرع</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell-Shoulder-Press2.gif" alt=""><div class="ex-info"><div class="ex-name">كتف امامي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lateral Raises.webp" alt=""><div class="ex-info"><div class="ex-name">رفرفة جانبي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Rear shoulder on the machine.webp" alt=""><div class="ex-info"><div class="ex-name">كتف خلفي بالجهاز</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Cable Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">باي بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell curl mael.webp" alt=""><div class="ex-info"><div class="ex-name">باي ع الدكة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Overhead Tricep Extension.png" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس فرنساوي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Tricep Pushdown.webp" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الخميس: أرجل (تكرار) -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الخميس</span>
+            <span class="day-muscle">(اختياري) رجل كاملة</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/squat.webp" alt=""><div class="ex-info"><div class="ex-name">سكوات</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Romanian Deadlift.jpg" alt=""><div class="ex-info"><div class="ex-name">ديدليفت روماتي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Press.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الدفع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">الجهاز للرجل الخلفي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Extension.jpg" alt=""><div class="ex-info"><div class="ex-name">جهاز للرجل الامامي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Calf Raise.webp" alt=""><div class="ex-info"><div class="ex-name">سمانة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الجمعة: راحة -->
+        <div class="day-card rest-day">
+          <div class="day-header">
+            <span class="day-name">الجمعة</span>
+            <span class="day-muscle rest">راحة 💤</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><div class="ex-info"><div class="ex-name">يوم راحة كامل</div><div class="ex-sets">العضلة بتتبني في الراحة مش في التمرين</div></div></div>
+          </div>
+        </div>
+
+      </div><!-- /days-grid Arnold -->
+    </div><!-- /tab-panel Arnold -->
+
+    <!-- ══ TAB 3: Pro Split ══ -->
+    <div class="tab-panel" id="pro">
+      <div class="system-meta">
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-calendar-week"></i></div><div class="meta-label">أيام التمرين</div><div class="meta-value">5 أيام / أسبوع</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-repeat"></i></div><div class="meta-label">تكرار العضلة</div><div class="meta-value">مرة أسبوعياً</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-signal"></i></div><div class="meta-label">المستوى</div><div class="meta-value">مبتدئ → متوسط</div></div>
+        <div class="meta-card"><div class="meta-icon"><i class="fa-solid fa-bullseye"></i></div><div class="meta-label">الهدف</div><div class="meta-value">تشكيل + ضخامة</div></div>
+      </div>
+        <!-- زرار الرجوع للأيام كلها -->
+        <div class="days-back-bar" style="display:none;">
+          <button class="days-back-btn" onclick="resetDayCards(this)">
+            <i class="fa-solid fa-arrow-right"></i>
+            رجوع للأيام كلها
+          </button>
+          <span class="days-back-label"></span>
+        </div>
+      <div class="days-grid">
+
+        <!-- السبت: صدر -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">السبت</span>
+            <span class="day-muscle">صدر — Chest Day</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bench Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش مستوي بالبار</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Incline Dumbbell Press.webp" alt=""><div class="ex-info"><div class="ex-name">بنش عالي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell Flyes.png" alt=""><div class="ex-info"><div class="ex-name">تفتيح بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Butterfly device.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الفراشة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Cable Chest Fly.jpg" alt=""><div class="ex-info"><div class="ex-name">كابلات</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الأحد: ظهر -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الأحد</span>
+            <span class="day-muscle">ظهر — Back Day</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Bent-Over Row.webp" alt=""><div class="ex-info"><div class="ex-name">سحب ارضي واسع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/LatPullDownDeak.png" alt=""><div class="ex-info"><div class="ex-name">سحب عالي ضيق</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lat Pulldown.webp" alt=""><div class="ex-info"><div class="ex-name">سحب علوي للضهر</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/cablerow.jpg" alt=""><div class="ex-info"><div class="ex-name">سحب ارضي ضيق</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/oneHandpullove.webp" alt=""><div class="ex-info"><div class="ex-name">سحب عالي ع الكيبل قاعد</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/oneHandpullove.webp" alt=""><div class="ex-info"><div class="ex-name">سحب عالي فردي للضهر</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Traps.jpg" alt=""><div class="ex-info"><div class="ex-name"> ترابيس</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الاثنين: أرجل -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الاثنين</span>
+            <span class="day-muscle">أرجل — Leg Day</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/squat.webp" alt=""><div class="ex-info"><div class="ex-name">سكوات</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Romanian Deadlift.jpg" alt=""><div class="ex-info"><div class="ex-name">ديدليفت روماتي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Press.webp" alt=""><div class="ex-info"><div class="ex-name">جهاز الدفع</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">الجهاز للرجل الخلفي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Leg Extension.jpg" alt=""><div class="ex-info"><div class="ex-name">جهاز للرجل الامامي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Calf Raise.webp" alt=""><div class="ex-info"><div class="ex-name">سمانة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الثلاثاء: راحة -->
+        <div class="day-card rest-day">
+          <div class="day-header">
+            <span class="day-name">الثلاثاء</span>
+            <span class="day-muscle rest">راحة 💤</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><div class="ex-info"><div class="ex-name">يوم راحة أو كارديو خفيف</div><div class="ex-sets">30 دقيقة مشي أو بايك</div></div></div>
+          </div>
+        </div>
+
+        <!-- الأربعاء: كتف -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الأربعاء</span>
+            <span class="day-muscle">كتف — Shoulder Day</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell-Shoulder-Press2.gif" alt=""><div class="ex-info"><div class="ex-name">كتف امامي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Lateral Raises.webp" alt=""><div class="ex-info"><div class="ex-name">رفرفة جانبي بالدامبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Rear shoulder on the machine.webp" alt=""><div class="ex-info"><div class="ex-name">كتف خلفي بالجهاز</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Face Pull.webp" alt=""><div class="ex-info"><div class="ex-name">كتف خلفي بالحبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Front Raise.webp" alt=""><div class="ex-info"><div class="ex-name">رفرفة امامي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+          </div>
+        </div>
+
+        <!-- الخميس: أذرع -->
+        <div class="day-card">
+          <div class="day-header">
+            <span class="day-name">الخميس</span>
+            <span class="day-muscle">أذرع — Arms Day</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Concentration Curl.webp" alt=""><div class="ex-info"><div class="ex-name">ارتكاز بالدامبل ع الدكة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>            
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Cable Curl.jpg" alt=""><div class="ex-info"><div class="ex-name">باي بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Dumbbell curl mael.webp" alt=""><div class="ex-info"><div class="ex-name">باي ع الدكة</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Overhead Tricep Extension.png" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس فرنساوي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Tricep Pushdown.webp" alt=""><div class="ex-info"><div class="ex-name">ترايسيبس بالمسطرة ع الكيبل</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+            <div class="exercise-item"><div class="ex-dot"></div><img src="Images/Tricep Dips.webp" alt=""><div class="ex-info"><div class="ex-name">دبس للتراي</div><div class="ex-sets">3 مجاميع × 12 تكرار</div></div></div>
+
+          </div>
+        </div>
+
+        <!-- الجمعة: راحة -->
+        <div class="day-card rest-day">
+          <div class="day-header">
+            <span class="day-name">الجمعة</span>
+            <span class="day-muscle rest">راحة 💤</span>
+          </div>
+          <div class="day-exercises">
+            <div class="exercise-item"><div class="ex-dot"></div><div class="ex-info"><div class="ex-name">يوم راحة كامل</div><div class="ex-sets">نوم — تغذية — تعافي</div></div></div>
+          </div>
+        </div>
+
+      </div><!-- /days-grid Pro -->
+    </div><!-- /tab-panel Pro -->
+
+  </div><!-- /container -->
+</section>
+
+<!-- ════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">من نحن</div>
+        <h2 class="section-title">بيئة تدريبية على مستوى عالمي</h2>
+        <p>نوفر أفضل بيئة تدريبية مع أحدث المعدات والمدربين المحترفين لمساعدتك في تحقيق أهدافك الرياضية.</p>
+        <p>نساعدك في التعرف على تمارينك بنفسك لعدم الاحتياج لأي شخص آخر، مع متابعة مستمرة لتطورك.</p>
+      </div>
+      <div class="about-features reveal">
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-dumbbell"></i></div><div class="feature-text"><strong>معدات حديثة</strong><span>أحدث الأجهزة الرياضية المتطورة</span></div></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div><div class="feature-text"><strong>مدربون معتمدون</strong><span>نخبة من أفضل المدربين المتخصصين</span></div></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div><div class="feature-text"><strong>متابعة مستمرة</strong><span>تتبع تقدمك يوم بيوم</span></div></div>
+        <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-clock"></i></div><div class="feature-text"><strong>مواعيد مرنة</strong><span>من 9 صباحاً حتى 12 مساءً</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TRAINERS
+════════════════════════════════════════ -->
+<section class="trainers" id="trainers">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">الفريق</div>
+      <h2 class="section-title">نخبة أفضل المدربين</h2>
+      <p>كل مدرب عنده خبرة ومتخصص في مجاله عشان يوصلك لأهدافك بأسرع وقت</p>
+    </div>
+    <div class="trainers-grid">
+      <div class="trainer-card"><img class="trainer-img" src="images/(1) WhatsApp - Google Chrome 22_04_2026 03_04_30 م.png" alt="مدرب"><div class="trainer-info"><div class="trainer-name"> الكابتن/احمد كمال الشرقاوي</div><div class="trainer-role">دكتوراه في التربية الرياضية</div><div class="trainer-spec"> تخصص تشوهات قوامية</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     TIPS
+════════════════════════════════════════ -->
+<section class="tips" id="tips">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">نصايح</div>
+      <h2 class="section-title">نصايح على الماشي للمبتدئين</h2>
+      <p>قبل ما تبدأ رحلتك، خليك عارف الحاجات دي كويس</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-num">01</div><p class="tip-text">متستعجلش على العضلات — بتستوي على نار هادية هيا 😉</p></div>
+      <div class="tip-card"><div class="tip-num">02</div><p class="tip-text">مش لازم تكون مثالي جداً في البداية 💀</p></div>
+      <div class="tip-card"><div class="tip-num">03</div><p class="tip-text">متقارنش نفسك بناس قديمة في المجال ☺️</p></div>
+      <div class="tip-card"><div class="tip-num">04</div><p class="tip-text">زي ما انت جامد في المجال، في الأجمد برضو 👌</p></div>
+      <div class="tip-card"><div class="tip-num">05</div><p class="tip-text">أداء التمرين مهم زي الأوزان بالظبط 😎</p></div>
+      <div class="tip-card"><div class="tip-num">06</div><p class="tip-text">متتمرنش زي الحصان وتاكل زي العصفورة 😚</p></div>
+      <div class="tip-card"><div class="tip-num">07</div><p class="tip-text">  بلاش منظرة علي حد لسة جديد في الجيم  😚</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     PRICING
+════════════════════════════════════════ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">الأسعار</div>
+      <h2 class="section-title">اشتراكات بتناسب الجميع</h2>
+      <p>كل الاشتراكات بتشمل دخول النادي الكامل والأجهزة — زيد الوقت وفّر أكتر</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- شهري -->
+      <div class="price-card">
+        <div class="price-period">اشتراك شهري</div>
+        <div class="price-amount">
+          <span class="currency">جـ</span>
+          <span class="amount">180</span>
+          <span class="per">/ شهر</span>
+        </div>
+        <div class="price-desc">مناسب لتجربة النادي والبداية</div>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> دخول كامل لجميع الأجهزة</li>
+          <li><i class="fa-solid fa-check"></i> برنامج تدريبي مجاني</li>
+          <li><i class="fa-solid fa-check"></i> متابعة أسبوعية</li>
+          <li><i class="fa-solid fa-xmark" style="color:#555"></i> <span style="color:#666">خصم على المنتجات</span></li>
+        </ul>
+        <button class="price-btn">اشترك دلوقتي</button>
+      </div>
+
+      <!-- 3 شهور — Featured -->
+      <div class="price-card featured">
+        <div class="price-badge">⭐ الأكثر شعبية</div>
+        <div class="price-period">اشتراك 3 شهور</div>
+        <div class="price-amount">
+          <span class="currency">جـ</span>
+          <span class="amount">400</span>
+          <span class="per">/ 3 شهور</span>
+        </div>
+        <div class="price-desc">الأفضل للنتائج — وفّر 140 جنيه</div>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> كل مميزات الشهري</li>
+          <li><i class="fa-solid fa-check"></i> جلسة قياس جسم مجانية</li>
+          <li><i class="fa-solid fa-check"></i> نظام غذائي مخصص</li>        
+        </ul>
+        <button class="price-btn">اشترك دلوقتي</button>
+      </div>
+
+      <!-- 6 شهور -->
+      <div class="price-card">
+        <div class="price-period">اشتراك 6 شهور</div>
+        <div class="price-amount">
+          <span class="currency">جـ</span>
+          <span class="amount">700</span>
+          <span class="per">/ 6 شهور</span>
+        </div>
+        <div class="price-desc">وفّر مقارنةً بالشهري</div>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> كل مميزات الـ 3 شهور</li>
+          <li><i class="fa-solid fa-check"></i> أولوية في الحجز</li>
+          <li><i class="fa-solid fa-check"></i> جلستين قياس مجانيتين</li>
+        </ul>
+        <button class="price-btn">اشترك دلوقتي</button>
+      </div>
+
+      <!-- سنوي -->
+      <div class="price-card">
+        <div class="price-period">اشتراك سنوي</div>
+        <div class="price-amount">
+          <span class="currency">جـ</span>
+          <span class="amount">1000</span>
+          <span class="per">/ سنة</span>
+        </div>
+        <div class="price-desc">وفّر 1160 جنيه — الأفضل على المدى البعيد</div>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> كل مميزات الـ 6 شهور</li>
+          <li><i class="fa-solid fa-check"></i> مدرب شخصي لشهر كامل</li>
+          <li><i class="fa-solid fa-check"></i> قياسات شهرية مجانية</li>
+        </ul>
+        <button class="price-btn">اشترك دلوقتي</button>
+      </div>
+
+    </div><!-- /pricing-grid -->
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">HERO GYM</div>
+        <p class="footer-desc">Pushing the boundaries of human evolution. Our facility is engineered for those who demand more from every rep.</p>
+        <div class="footer-socials">
+          <div class="social-btn"><i class="fa-brands fa-instagram"></i></div>
+          <div class="social-btn"><i class="fa-brands fa-facebook"></i></div>
+          <div class="social-btn"><i class="fa-brands fa-tiktok"></i></div>
+          <div class="social-btn"><i class="fa-brands fa-whatsapp"></i></div>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">الصفحات</p>
+        <div class="footer-links">
+          <a href="#about">عن النادي</a>
+          <a href="#trainers">المدربين</a>
+          <a href="#tips">النصايح</a>
+          <a href="#systems">الأنظمة التدريبية</a>
+          <a href="#pricing">الأسعار</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">تواصل معنا</p>
+        <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>جهينة الغربية، غربي مركز جهينة الجديد</span></div>
+        <div class="contact-item"><i class="fa-solid fa-phone"></i><span>0128548990</span></div>
+        <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>yassayassa104@gmail.com</span></div>
+      </div>
+      <div>
+        <p class="footer-col-title">انضم إلينا</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="بريدك الإلكتروني">
+          <button>انضم</button>
+        </div>
+        <div class="working-hours">
+          <p>مواعيد العمل</p>
+          <p>4 مساءً –  الي نهاية العمل</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 HERO GYM — جميع الحقوق محفوظة</span>
+      <span>تم التطوير بواسطة < Yassa Bakhit > </span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="app.js"></script>
+</body>
+</html>
+
+
+تم التطوير بواسطة < Yassa Bakhit > 
